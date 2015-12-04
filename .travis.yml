@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - docker build --rm=true -t gchiam/base .
+  - docker build --rm=true -t gchiam/streamparse .
 
 script:
-    - docker run --entrypoint "/bin/bash" gchiam/base -c "/bin/echo hello"
+    - docker run --entrypoint "sparse" gchiam/streamparse -h
