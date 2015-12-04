@@ -1,28 +1,11 @@
-FROM gchiam/openjdk:8
+FROM alpine:3.2
 
 MAINTAINER Gordoon Chiam <gordon.chiam@gmail.com>
 
-RUN apk --update add \
-    ca-certificates \
-    bash \
-    curl \
-    build-base \
-    gcc \
-    python \
-    python-dev \
-    py-pip
+ADD files/.bashrc /root/.bashrc
 
-RUN pip install -U pip
+RUN apk --update add bash
 
-
-# download and install Leiningen
-ENV LEIN_ROOT=1
-RUN curl https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein > ./lein
-RUN chmod a+x ./lein
-RUN mv ./lein /usr/bin/lein
-RUN lein version
-
-RUN pip install streamparse
-
+EXPOSE 22
 
 ENTRYPOINT ["/bin/bash"]

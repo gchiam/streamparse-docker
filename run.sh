@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker run --rm -it gchiam/streamparse
+docker run --rm -it gchiam/base

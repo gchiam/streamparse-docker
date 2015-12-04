@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build --rm=true -t gchiam/streamparse .
+docker build --rm=true -t gchiam/base .
