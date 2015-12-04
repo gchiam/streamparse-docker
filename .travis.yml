@@ -1,0 +1,10 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build --rm=true -t gchiam/streamparse .
+
+script:
+    - docker run --entrypoint "sparse" gchiam/streamparse -h
