@@ -10,7 +10,9 @@ RUN apk --update add \
     gcc \
     python \
     python-dev \
-    py-pip
+    py-pip \
+    openssl-dev \
+    libffi-dev
 
 RUN pip install -U pip
 
